@@ -152,11 +152,32 @@
 // else {
 //     Console.WriteLine("Пароль не принят");
 // }
-Console.Write("Напишите ваш возраст: ");
-int q = int.Parse(Console.ReadLine());
-if (q >= 18) {
-    Console.WriteLine("Доступ разрешён");
-}
-else {
-    Console.WriteLine("Доступ запрещён");
+// Console.Write("Напишите ваш возраст: ");
+// int q = int.Parse(Console.ReadLine());
+// if (q >= 18) {
+//     Console.WriteLine("Доступ разрешён");
+// }
+// else {
+//     Console.WriteLine("Доступ запрещён");
+// }
+Console.Write("Напишите число 1: ");
+int p1 = int.Parse(Console.ReadLine());
+Console.Write("Напишите число 2: ");
+int p2 = int.Parse(Console.ReadLine());
+Console.Write("Напишите операцию: ");
+string o = Console.ReadLine();
+switch (o) {
+    case "+":
+        Console.WriteLine($"{p1} + {p2} = {p1 + p2}");
+        break;
+    case "-":
+        Console.WriteLine($"{p1} - {p2} = {p1 - p2}");
+        break;
+    case "*":
+        Console.WriteLine($"{p1} * {p2} = {p1 * p2}");
+        break;
+    case "/":
+        Console.WriteLine($"{p1} / {p2} = {p1 / p2}");
+        break;
+
 }
