@@ -180,12 +180,35 @@
 //         Console.WriteLine($"{p1} / {p2} = {p1 / p2}");
 //         break;
 // }
-Console.WriteLine("Напишите 3 числа(каждое на новой строке): ");
-int r = 0;
-for (int i = 0; i < 3; i++) {
-    int p1 = int.Parse(Console.ReadLine());
-    if (p1 > 0) {
-        r += p1;
+// Console.WriteLine("Напишите 3 числа(каждое на новой строке): ");
+// int r = 0;
+// for (int i = 0; i < 3; i++) {
+//     int p1 = int.Parse(Console.ReadLine());
+//     if (p1 > 0) {
+//         r += p1;
+//     }
+// }
+// Console.WriteLine(r);
+Console.WriteLine("В какую дверь вы пойдете? Путь А: Войти в комнату с огромным драконом. Путь B: Пойти по тёмному коридору. ");
+string a = Console.ReadLine();
+if (a == "A" || a == "a") {
+    Console.WriteLine("Ответьте на вопрос дракона: ");
+    Console.WriteLine("Кто не дышит, но живёт; хоть не нужно — много пьёт; и вжизни, и в смерти тело как лёд.");
+    string a1 = Console.ReadLine();
+    if (a1 == "Рыба" || a1 == "рыба") {
+        Console.WriteLine("Дракон открыл вам дверь в следующую комнату.");
+    }
+    else {
+        Console.WriteLine("Дракон вас съел.");
     }
 }
-Console.WriteLine(r);
+else  if (a == "B" || a == "b"){
+    Console.Write("Вас ждёт тёмная комната с двумя дверями. В какую дверь вы пойдете?(1 или 2): ");
+    int a1 = int.Parse(Console.ReadLine());
+    if (a1 == 1) {
+        Console.WriteLine("Вы получили сокровища Dungeon Master’а.");
+    }
+    else {
+        Console.WriteLine("Вы попали в ловушку с ядовитыми шипами.");
+    }
+}
