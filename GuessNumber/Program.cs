@@ -72,27 +72,73 @@
 //         Console.WriteLine($"Ошибка: пункт <{choice}> не существует. Введите число от 1 до 4.");
 //         break;
 // }
-Console.Write("Введите номер месяца: ");
-int a = int.Parse(Console.ReadLine());
-switch (a) {
-    case 12:
-    case 1:
-    case 2:
-        Console.WriteLine("Зима");
-        break;
-    case 3:
-    case 4:
-    case 5:
-        Console.WriteLine("Весна");
-        break;
-    case 6:
-    case 7:
-    case 8:
-        Console.WriteLine("Лето");
-        break;
-    case 9:
-    case 10:
-    case 11:
-        Console.WriteLine("Осень");
-        break;
+// Console.Write("Введите номер месяца: ");
+// int a = int.Parse(Console.ReadLine());
+// switch (a) {
+//     case 12:
+//     case 1:
+//     case 2:
+//         Console.WriteLine("Зима");
+//         break;
+//     case 3:
+//     case 4:
+//     case 5:
+//         Console.WriteLine("Весна");
+//         break;
+//     case 6:
+//     case 7:
+//     case 8:
+//         Console.WriteLine("Лето");
+//         break;
+//     case 9:
+//     case 10:
+//     case 11:
+//         Console.WriteLine("Осень");
+//         break;
+// }
+Random random = new Random();
+int secret = random.Next(1, 101);
+int attempts = 0;
+bool guassed = false;
+Console.WriteLine("Угадай число (1-100)");
+Console.WriteLine("Я загадал число. Попробуй угадать!");
+Console.WriteLine($"🎉 Правильно! Загаданное число: {secret}");
+string GetHint(int difference) {
+    switch (difference) {
+        case <= 3:
+            return "🔥 Горячо!";
+        case <= 10:
+            return "🌡️ Тепло.";
+        case <= 25:
+            return "🌀 Прохладно.";
+        default:
+            return "❄️ Холодно!";
+    }
 }
+while (!guassed) {
+    Console.Write($"Попытка {attempts + 1}. Твой вариант: ");
+    string input = Console.ReadLine();
+    if (!int.TryParse(input, out int guess)) {
+        Console.WriteLine("!!! Введи целое число, а не текст!");
+        continue;
+    }
+    if (guess < 1 || guess > 100) {
+        Console.WriteLine("!!! Число должно быть от 1 до 100!");
+        continue;
+    }
+    attempts++;
+    if (guess < secret) {
+        int diff = secret - guess;
+        string hint = GetHint(diff);
+        Console.WriteLine($"⬆️ Больше! {hint}\n");
+    }else if (guess > secret) {
+        int diff = guess - secret;
+        string hint = GetHint(diff);
+        Console.WriteLine($"⬇️ Меньше! {hint}\n");
+    }
+    else {
+        guassed = true;
+    }
+}
+string result = attempts <= 7 ? $"Отличный результат! Всего {attempts} попыток" : $"Число найдено на {attempts} попыток. Можно лучше!";
+Console.WriteLine($"{result}");
