@@ -160,24 +160,32 @@
 // else {
 //     Console.WriteLine("Доступ запрещён");
 // }
-Console.Write("Напишите число 1: ");
-int p1 = int.Parse(Console.ReadLine());
-Console.Write("Напишите число 2: ");
-int p2 = int.Parse(Console.ReadLine());
-Console.Write("Напишите операцию: ");
-string o = Console.ReadLine();
-switch (o) {
-    case "+":
-        Console.WriteLine($"{p1} + {p2} = {p1 + p2}");
-        break;
-    case "-":
-        Console.WriteLine($"{p1} - {p2} = {p1 - p2}");
-        break;
-    case "*":
-        Console.WriteLine($"{p1} * {p2} = {p1 * p2}");
-        break;
-    case "/":
-        Console.WriteLine($"{p1} / {p2} = {p1 / p2}");
-        break;
-
+// Console.Write("Напишите число 1: ");
+// int p1 = int.Parse(Console.ReadLine());
+// Console.Write("Напишите число 2: ");
+// int p2 = int.Parse(Console.ReadLine());
+// Console.Write("Напишите операцию: ");
+// string o = Console.ReadLine();
+// switch (o) {
+//     case "+":
+//         Console.WriteLine($"{p1} + {p2} = {p1 + p2}");
+//         break;
+//     case "-":
+//         Console.WriteLine($"{p1} - {p2} = {p1 - p2}");
+//         break;
+//     case "*":
+//         Console.WriteLine($"{p1} * {p2} = {p1 * p2}");
+//         break;
+//     case "/":
+//         Console.WriteLine($"{p1} / {p2} = {p1 / p2}");
+//         break;
+// }
+Console.WriteLine("Напишите 3 числа(каждое на новой строке): ");
+int r = 0;
+for (int i = 0; i < 3; i++) {
+    int p1 = int.Parse(Console.ReadLine());
+    if (p1 > 0) {
+        r += p1;
+    }
 }
+Console.WriteLine(r);
