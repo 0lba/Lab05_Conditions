@@ -142,13 +142,21 @@
 // }
 // string result = attempts <= 7 ? $"Отличный результат! Всего {attempts} попыток" : $"Число найдено на {attempts} попыток. Можно лучше!";
 // Console.WriteLine($"{result}");
-Console.Write("Напишите пароль: ");
-string p1 = Console.ReadLine();
-Console.Write("Напишите пароль еще раз: ");
-string p2 = Console.ReadLine();
-if (p1 == p2) {
-    Console.WriteLine("Пароль принят");
+// Console.Write("Напишите пароль: ");
+// string p1 = Console.ReadLine();
+// Console.Write("Напишите пароль еще раз: ");
+// string p2 = Console.ReadLine();
+// if (p1 == p2) {
+//     Console.WriteLine("Пароль принят");
+// }
+// else {
+//     Console.WriteLine("Пароль не принят");
+// }
+Console.Write("Напишите ваш возраст: ");
+int q = int.Parse(Console.ReadLine());
+if (q >= 18) {
+    Console.WriteLine("Доступ разрешён");
 }
 else {
-    Console.WriteLine("Пароль не принят");
+    Console.WriteLine("Доступ запрещён");
 }
